@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #2c3e50;
+    transition: all 0.5s ease;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    transition: all 0.5s ease;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 { font-size: 2.8rem; margin-bottom: 5px; }
+
+h2 {
+    margin: 30px 0 20px;
+    border-bottom: 2px solid rgba(52, 152, 219, 0.3);
+    padding-bottom: 8px;
+    color: #34495e;
+}
+
+/* Секція Про мене з фото */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Для мобільних пристроїв */
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20%; /* М'який квадрат */
+    border: 4px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    flex: 1;
+    min-width: 280px;
+    line-height: 1.6;
+}
+
+/* Навички */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.skills-grid span {
+    background: #3498db;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Коментарі */
+.comment {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.comment:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(52, 152, 219, 0.2);
+    border-color: #3498db;
+}
+
+/* Кнопка теми */
+#themeToggle {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.6rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+/* Темна тема */
+body.dark {
+    background: linear-gradient(135deg, #0f0c29, #302b63);
+    color: #f8f9fa;
+}
+
+body.dark .container {
+    background: rgba(20, 20, 40, 0.85);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark h1, body.dark h2 { color: #ffffff; }
+
+body.dark .comment {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ced4da;
+}
+
+body.dark #themeToggle { background: #1a1a2e; color: #fff; }
+
+/* Модальне вікно */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+body.dark .modal-content { background: #16213e; color: white; }
+
+input, textarea {
+    width: 100%;
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+}
+
+button[type="submit"] {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+    font-size: 0.9rem;
+}
